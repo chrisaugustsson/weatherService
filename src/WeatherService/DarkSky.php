@@ -14,8 +14,8 @@ class DarkSky
     {
         $this->locationProvider = $locationProvider;
         $this->curl = $curl;
-        $keys = $cfg->load("api_keys.php");
-        $this->apiKey = $keys["config"]["darksky"];
+        $keys = $cfg->load("weatherService.php");
+        $this->apiKey = $keys["config"]["apiKey"];
     }
 
     public function setLocation($ip)
