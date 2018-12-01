@@ -75,6 +75,7 @@ class WeatherController implements ContainerInjectableInterface
         $curl = $di->get("curl");
         $cfg = $di->get("configuration");
 
+        $weather->setLocation($ip);
         $res = $weather->getOldCast();
 
         if (isset($res["error"])) {
