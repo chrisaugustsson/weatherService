@@ -1,5 +1,5 @@
 {
-    "name": "anax/remserver",
+    "name": "anax/weather-service",
     "type": "library",
     "description": "Weather serivce using DarkSky API",
     "license": "MIT",
