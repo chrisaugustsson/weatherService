@@ -19,7 +19,7 @@ class WeatherController implements ContainerInjectableInterface
 
         // Get users IP-address from SERVER
         $ip = $request->getServer("HTTP_X_FORWARDED_FOR");
-        $page->add("anax/weather/index", [
+        $page->add("weather/index", [
             "ip" => $ip,
             "valid" => $validIp
         ]);
@@ -36,7 +36,6 @@ class WeatherController implements ContainerInjectableInterface
         $response = $di->get("response");
         $page = $di->get("page");
         $weather = $di->get("weather");
-        $location = $di->get("location");
 
         $ip = $request->getGet("ip");
         $history = $request->getGet("history") ?? null;
@@ -57,7 +56,7 @@ class WeatherController implements ContainerInjectableInterface
             "res" => $res
         ];
 
-        $page->add("anax/weather/weather", $data);
+        $page->add("weather/weather", $data);
 
         return $page->render([
             "title" => "Local weather"
@@ -71,15 +70,12 @@ class WeatherController implements ContainerInjectableInterface
         $response = $di->get("response");
         $page = $di->get("page");
         $ip = $request->getGet("ip");
+        $weather = $di->get("weather");
 
         $curl = $di->get("curl");
         $cfg = $di->get("configuration");
 
-        $locationProvider = new IpStack($curl, $cfg);
-        $darkSky = new DarkSky($locationProvider, $curl, $cfg);
-        $darkSky->setLocation($ip);
-
-        $res = $darkSky->getOldCast();
+        $res = $weather->getOldCast();
 
         if (isset($res["error"])) {
             return $response->redirect("weather?ip=false");
@@ -89,7 +85,7 @@ class WeatherController implements ContainerInjectableInterface
             "res" => $res
         ];
 
-        $page->add("anax/weather/history", $data);
+        $page->add("weather/history", $data);
 
         return $page->render([
             "title" => "Local weather"

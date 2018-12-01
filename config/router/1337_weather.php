@@ -7,7 +7,7 @@ return [
         [
             "info" => "Weather from IP-address",
             "mount" => "weather",
-            "handler" => "\Anax\Weather\WeatherController",
+            "handler" => "\Anax\WeatherService\WeatherController",
         ]
     ]
 ];
