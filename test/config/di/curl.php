@@ -6,13 +6,13 @@ return [
 
     // Services to add to the container.
     "services" => [
-        "response" => [
+        "curl" => [
             "shared" => true,
-            //"callback" => "\Anax\Response\Response",
             "callback" => function () {
-                $obj = new \Anax\Mock\ResponseMock();
-                $obj->setDI($this);
-                return $obj;
+                $cache = new \Anax\Mock\CacheMock;
+                $curl = new \Anax\Curl\Curl($cache);
+
+                return $curl;
             }
         ],
     ],
