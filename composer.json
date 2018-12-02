@@ -1,5 +1,5 @@
 {
-    "name": "anax/weather-service",
+    "name": "chau/weather-service",
     "type": "library",
     "description": "Weather serivce using DarkSky API",
     "license": "MIT",
@@ -12,8 +12,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.2",
-        "anax/commons": "^2.0.0@beta",
-        "anax/page": "^2.0.0@beta"
+        "anax/commons": "^2.0.0@beta"
     },
     "require-dev": {
         "phpmetrics/phpmetrics": "^2",

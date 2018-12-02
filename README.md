@@ -29,7 +29,7 @@ This is how you install the module into an existing Anax installation.
 Install using composer.
 
 ```
-composer require anax/weather-service
+composer require chau/weather-service
 ```
 
 Copy the needed configuration files. Including API-keys, route-config and config to import into DI.
