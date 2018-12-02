@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\LocatonProvider;
+namespace Anax\LocationProvider;
 
 class Ipstack implements LocationProviderInterface
 {
