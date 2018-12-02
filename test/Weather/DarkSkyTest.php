@@ -1,11 +1,12 @@
 <?php
 
-namespace Anax\Weather;
+namespace Anax\WeatherService;
 
 use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
 use Anax\Curl\Curl;
-use Anax\IpLocation\Ipstack;
+use Anax\LocationProvider\Ipstack;
+use Anax\Mock\CacheMock;
 
 /**
  * Test the FlatFileContentController.
@@ -29,12 +30,14 @@ class DarkSkyTest extends TestCase
         // Setup di
         $this->di = new DIFactoryConfig();
         $this->di->loadServices(ANAX_INSTALL_PATH . "/config/di");
+        $this->di->loadServices(ANAX_INSTALL_PATH . "/test/config/di");
 
         // View helpers uses the global $di so it needs its value
         $di = $this->di;
 
         // Init the modules needed
-        $curl = $di->get("curl");
+        $cache = new CacheMock;
+        $curl = new Curl($cache);
         $cfg = $di->get("configuration");
         $locationProvider = new Ipstack($curl, $cfg);
 

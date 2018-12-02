@@ -1,7 +1,7 @@
 <?php
 
 namespace Anax\WeatherService;
-use Anax\Interfaces\LocationProviderInterface;
+use Anax\LocationProvider\LocationProviderInterface;
 
 class DarkSky
 {
