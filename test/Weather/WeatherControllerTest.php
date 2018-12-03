@@ -67,6 +67,17 @@ class WeatherControllerTest extends TestCase
         $this->assertContains($exp, $res["title"]);
     }
 
+    public function testHistoryActionInvalidIp()
+    {
+        $request = $this->di->get("request");
+        $request->setGet("ip", "92.232.60.15x");
+
+        $res = $this->controller->historyActionGet();
+
+        $exp = "weather?ip=false";
+        $this->assertContains($exp, $res->property);
+    }
+
     public function testIpActionGetInvalidIp()
     {
         $request = $this->di->get("request");
@@ -74,7 +85,19 @@ class WeatherControllerTest extends TestCase
 
         $res = $this->controller->ipActionGet();
 
-        $exp = "Local weather";
-        $this->assertContains($exp, $res);
+        $exp = "weather?ip=false";
+        $this->assertContains($exp, $res->property);
+    }
+
+    public function testHistoryRedirect()
+    {
+        $request = $this->di->get("request");
+        $request->setGet("ip", "92.232.60.151");
+        $request->setGet("history", "is-set");
+
+        $res = $this->controller->ipActionGet();
+
+        $exp = "weather/history?ip=92.232.60.151";
+        $this->assertContains($exp, $res->property);
     }
 }

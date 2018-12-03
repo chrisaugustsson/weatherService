@@ -7,8 +7,7 @@ class ResponseMock extends ResponseUtility
 {
     public function redirect(string $url) : object
     {
-        return [
-            "res" => "Redirected to " . $url
-        ];
+        $returnObject = (object) ['property' => $url];
+        return $returnObject;
     }
 }

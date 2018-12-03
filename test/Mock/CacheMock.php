@@ -6,6 +6,9 @@ class CacheMock
 {
     public function get($dummyParam)
     {
+        if ($dummyParam === "true") {
+            return true;
+        }
         return null;
     }
 
