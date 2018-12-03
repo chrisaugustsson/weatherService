@@ -35,13 +35,13 @@ composer require chau/weather-service
 Copy the needed configuration files. Including API-keys, route-config and config to import into DI.
 
 ```
-rsync -av vendor/chau17/weather-service/config ./
+rsync -av vendor/chau/weather-service/config ./
 ```
 
 Copy the view files nedded using:
 
 ```
-rsync -av vendor/chau17/weather-service/view ./
+rsync -av vendor/chau/weather-service/view ./
 ```
 
 
