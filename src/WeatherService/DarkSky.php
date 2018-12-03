@@ -1,6 +1,7 @@
 <?php
 
 namespace Anax\WeatherService;
+
 use Anax\LocationProvider\LocationProviderInterface;
 
 class DarkSky
@@ -27,7 +28,6 @@ class DarkSky
         $this->long = $locationProvider->getLong();
         $this->city = $locationProvider->getCity();
         $this->country = $locationProvider->getCountry();
-
     }
 
     public function getForecast()
@@ -97,7 +97,6 @@ class DarkSky
                 "currentIcon" => $this->translateIcon($res[$i]->currently->icon),
                 "currentSum" => $res[$i]->currently->summary,
             ];
-
         }
 
         $data["city"] = $this->city;

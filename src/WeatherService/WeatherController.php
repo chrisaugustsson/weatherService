@@ -1,6 +1,7 @@
 <?php
 
 namespace Anax\WeatherService;
+
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
 
