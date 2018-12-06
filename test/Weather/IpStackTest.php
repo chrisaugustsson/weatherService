@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 use Anax\Curl\Curl;
 use Anax\LocationProvider\Ipstack;
 use Anax\Mock\CacheMock;
+use Anax\Mock\CurlMock;
 
 /**
  * Test the FlatFileContentController.
@@ -37,9 +38,9 @@ class IpStackTest extends TestCase
 
         // Init the modules needed
         $cache = new CacheMock;
-        $curl = new Curl($cache);
+        $curlIpStack = new CurlMock();
         $cfg = $di->get("configuration");
-        $this->locationProvider = new Ipstack($curl, $cfg);
+        $this->locationProvider = new Ipstack($curlIpStack, $cfg);
     }
 
 

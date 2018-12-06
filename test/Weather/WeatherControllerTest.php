@@ -81,7 +81,7 @@ class WeatherControllerTest extends TestCase
     public function testIpActionGetInvalidIp()
     {
         $request = $this->di->get("request");
-        $request->setGet("ip", "92.232.60.x");
+        $request->setGet("ip", "92.232.60.15x");
 
         $res = $this->controller->ipActionGet();
 

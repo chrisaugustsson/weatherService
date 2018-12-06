@@ -10,7 +10,7 @@ return [
             "shared" => true,
             "callback" => function () {
                 $cache = new \Anax\Mock\CacheMock;
-                $curl = new \Anax\Curl\Curl($cache);
+                $curl = new \Anax\Mock\CurlMock();
 
                 return $curl;
             }
