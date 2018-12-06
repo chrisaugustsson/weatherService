@@ -1,6 +1,9 @@
 Weather Service
 ==================================
 
+
+[![Build Status](https://travis-ci.com/chrisaugustsson/weatherService.svg?branch=master)](https://travis-ci.org/chrisaugustsson/weatherService.)
+
 Weather Service provides weather forecast based on IP-address. It uses Darksky API to get the forecast and IPStack to get co-ordinates from IP-address.
 
 You can use this module, together with an Anax installation.
