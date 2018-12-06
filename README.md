@@ -3,6 +3,10 @@ Weather Service
 
 
 [![Build Status](https://travis-ci.com/chrisaugustsson/weatherService.svg?branch=master)](https://travis-ci.org/chrisaugustsson/weatherService.)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chrisaugustsson/weatherService/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/chrisaugustsson/weatherService/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/chrisaugustsson/weatherService/badges/build.png?b=master)](https://scrutinizer-ci.com/g/chrisaugustsson/weatherService/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/chrisaugustsson/weatherService/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![Code Coverage](https://scrutinizer-ci.com/g/chrisaugustsson/weatherService/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/chrisaugustsson/weatherService/?branch=master)
 
 Weather Service provides weather forecast based on IP-address. It uses Darksky API to get the forecast and IPStack to get co-ordinates from IP-address.
 
