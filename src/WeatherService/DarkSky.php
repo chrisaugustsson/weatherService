@@ -10,6 +10,9 @@ class DarkSky
     private $lat;
     private $long;
     private $apiKey;
+    private $curl;
+    private $city;
+    private $country;
 
     public function __construct(LocationProviderInterface $locationProvider, $curl, $cfg)
     {
@@ -112,28 +115,20 @@ class DarkSky
         switch ($icon) {
             case 'clear-night':
                 return "moon";
-                break;
             case 'rain':
                 return "cloud-rain";
-                break;
             case 'clear-day':
                 return "sun";
-                break;
             case 'snow':
                 return "snowflake";
-                break;
             case 'sleet':
                 return "cloud-sleet";
-                break;
             case 'cloudy':
                 return "cloud";
-                break;
             case 'partly-cloudy-day':
                 return "cloud-sun";
-                break;
             default:
                 return $icon;
-                break;
         }
     }
 }

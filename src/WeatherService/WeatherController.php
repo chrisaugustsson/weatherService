@@ -73,9 +73,6 @@ class WeatherController implements ContainerInjectableInterface
         $ip = $request->getGet("ip");
         $weather = $di->get("weather");
 
-        $curl = $di->get("curl");
-        $cfg = $di->get("configuration");
-
         $weather->setLocation($ip);
         $res = $weather->getOldCast();
 

@@ -24,9 +24,7 @@ class Ipstack implements LocationProviderInterface
     public function setLocation(string $ip)
     {
         $curl = $this->curl;
-        $withOutSpecial = str_replace(":", ".", $ip);
         $url = "http://api.ipstack.com/" . $ip . "?access_key=" . $this->apiKey;
-        $res;
 
         $res = $curl->get($url);
 
